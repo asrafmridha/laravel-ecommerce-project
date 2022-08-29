@@ -25,6 +25,31 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+             <!-- For role -->
+             <div class="mt-4">
+                <x-label for="role" :value="__('Select Role')" />
+
+                     <select name="role" id="role" class="block mt-1 w-full">
+                        <option value="">-----Select------</option>
+                        <option value="1">Admin</option>
+                        <option value="2">User</option>
+                        <option value="3">Vendor</option>
+                     </select>
+            </div>
+
+            <!-- For phone -->
+            <div class="mt-4">
+                <x-label for="phone" :value="__('Phone Number')" />
+
+                <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('number')" required />
+            </div>
+
+             <!-- For pic -->
+             <div class="mt-4">
+                <x-label for="picture" :value="__('picture')" />
+
+                <x-input id="picture" class="block mt-1 w-full" type="file" name="picture" :value="old('picture')" required />
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
