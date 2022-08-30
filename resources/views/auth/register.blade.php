@@ -1,73 +1,92 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Meta -->
+    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+    <meta name="author" content="ThemePixels">
+
+    <title>Bracket Plus Responsive Bootstrap 4 Admin Template</title>
+
+    <!-- vendor css -->
+    <link href="{{ asset('backend') }}/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="{{ asset('backend') }}/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="{{ asset('backend') }}/lib/select2/css/select2.min.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="{{ asset('backend') }}/css/bracket.css">
+  </head>
+
+  <body>
+
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+
+      <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-white rounded shadow-base">
+        <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal">[</span> bracket <span class="tx-info">plus</span> <span class="tx-normal">]</span></div>
+        <div class="tx-center mg-b-40">The Admin Template For Perfectionist</div>
+     
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
+         <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                                <x-input id="name" class="form-control" type="text" name="name" :value="old('name')" autofocus />
             </div>
 
             <!-- Email Address -->
             <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-             <!-- For role -->
-             <div class="mt-4">
-                <x-label for="role" :value="__('Select Role')" />
-
-                     <select name="role" id="role" class="block mt-1 w-full">
-                        <option value="">-----Select------</option>
-                        <option value="1">Admin</option>
-                        <option value="2">User</option>
-                        <option value="3">Vendor</option>
-                     </select>
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" />
             </div>
 
-            <!-- For phone -->
+            
+            <!-- Email Role -->
             <div class="mt-4">
-                <x-label for="phone" :value="__('Phone Number')" />
-
-                <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" :value="old('number')" required />
+                               <select name="role" id="role" class="form-control" :value="old('role')">
+                    <option value="">-----Select Role-----</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Vendor</option>
+                    <option value="3">User</option>
+                </select>
             </div>
+            <!-- Email Phone -->
+            <div class="mt-4">
+                
 
-             <!-- For pic -->
-             <div class="mt-4">
-                <x-label for="picture" :value="__('picture')" />
-
-                <x-input id="picture" class="block mt-1 w-full" type="file" name="picture" :value="old('picture')" required />
+                <x-input id="phone" class="form-control" type="number" name="phone" :value="old('phone')" />
             </div>
+            <!-- Email Pic -->
+            <div class="mt-4">
+               
 
+                <x-input id="pic" class="form-control" type="file" name="pic" :value="old('pic')" />
+            </div>
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                
 
-                <x-input id="password" class="block mt-1 w-full"
+                <x-input id="password" class="form-control"
                                 type="password"
                                 name="password"
-                                required autocomplete="new-password" />
+                             autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
+                <x-input id="password_confirmation" class="form-control"
                                 type="password"
-                                name="password_confirmation" required />
+                                name="password_confirmation" />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -80,5 +99,22 @@
                 </x-button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+      </div><!-- login-wrapper -->
+    </div><!-- d-flex -->
+
+    <script src="{{ asset('backend') }}/lib/jquery/jquery.min.js"></script>
+    <script src="{{ asset('backend') }}/lib/jquery-ui/ui/widgets/datepicker.js"></script>
+    <script src="{{ asset('backend') }}/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('backend') }}/lib/select2/js/select2.min.js"></script>
+    <script>
+      $(function(){
+        'use strict';
+
+        $('.select2').select2({
+          minimumResultsForSearch: Infinity
+        });
+      });
+    </script>
+
+  </body>
+</html>
