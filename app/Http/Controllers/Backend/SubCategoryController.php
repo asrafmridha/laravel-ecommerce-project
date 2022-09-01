@@ -1,11 +1,74 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Subcategory;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Image;
+use File;
+
 
 class SubCategoryController extends Controller
 {
-    //
+    public function subcategoryview(){
+
+        return view('backend.pages.subcategory');
+    }
+
+    public function addsubcategory(Request $request){
+
+        $validator=Validator::make($request->all(),[
+
+            'name'=>'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status'=> 'required',
+    
+    
+           ]);
+    
+           if ($validator->fails())
+           {
+               return response()->json([
+                'status'=>'failed',
+                'errors'=>$validator->messages()
+    
+               ]);    
+           }
+
+           else{
+
+           
+       
+
+            if($request->image){
+                $image=$request->file('image');
+                $customname=rand().".".$image->getClientOriginalExtension();
+                $location= public_path('backend/subcategory/'.$customname);
+                Image::make($image)->save($location);
+          
+            }
+          
+            $subcategory=new Subcategory();
+            $subcategory->cat_id=101;
+            $subcategory->name=$request->name;
+            $subcategory->slug=Str::slug($request->name);
+            $subcategory->image=$customname;
+            $subcategory->status=$request->status;
+           
+
+            $subcategory->save();
+
+            return response()->json([
+
+               'status'=>'success'
+            ]);
+        
+           
+        }
+    }
+
+
+    
 }
