@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +20,29 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return view('backend.pages.dashboard');
+})->middleware(['auth','verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+//Route for Slider
+
+Route::group(['prefix'=>'/slider'],function(){
+
+    Route::get('/addsliderview',[SliderController::class,'addsliderview'])->name('addsliderview');
+    
+    Route::post('/store',[SliderController::class,'sliderstore'])->name('sliderstore');
+    
+    });
+
+// Route group for subcategory 
+Route::group(['prefix'=>'/subcategoey'],function(){
+
+Route::get('subcategoryview',[SubCategoryController::class,'subcategoryview'])->name('subcategoryview');
+
+Route::post('/addsubcategory',[SubCategoryController::class,'addsubcategory']);
+Route::get('/datatable',[SubCategoryController::class,'showtable']);
+
+
+});

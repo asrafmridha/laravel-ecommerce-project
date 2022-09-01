@@ -69,6 +69,18 @@ class SubCategoryController extends Controller
         }
     }
 
+    public function showtable(){
+
+        $subcategory=Subcategory::all();
+
+        return response()->json([
+
+           'alldata'=>$subcategory
+        ]);
+
+        
+    }
+
 
     
 }

@@ -11,6 +11,19 @@
           </a><!-- br-menu-link -->
         </li><!-- br-menu-item -->
 
+        {{-- for slider --}}
+        <li class="br-menu-item">
+          <a href="#" class="br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Slider</span>
+          </a><!-- br-menu-link -->
+          <ul class="br-menu-sub">
+            <li class="sub-item"><a href="{{Route('addsliderview')}}" class="sub-link">Add Slider</a></li>
+            
+          </ul>
+        </li>
+
+        {{-- for subcategory --}}
 
         <li class="br-menu-item">
           <a href="#" class="br-menu-link with-sub">
@@ -18,7 +31,7 @@
             <span class="menu-item-label">Subcategory</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="card-dashboard.html" class="sub-link">Manage SubCategory</a></li>
+            <li class="sub-item"><a href="{{Route('subcategoryview')}}" class="sub-link">Manage SubCategory</a></li>
             
           </ul>
         </li>
