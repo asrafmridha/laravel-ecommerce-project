@@ -43,6 +43,7 @@ Route::get('subcategoryview',[SubCategoryController::class,'subcategoryview'])->
 
 Route::post('/addsubcategory',[SubCategoryController::class,'addsubcategory']);
 Route::get('/datatable',[SubCategoryController::class,'showtable']);
+Route::get('/deletesubcategory/{id}',[SubCategoryController::class,'delete']);
 
 
 });
