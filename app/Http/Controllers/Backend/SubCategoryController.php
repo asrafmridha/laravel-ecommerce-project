@@ -84,7 +84,7 @@ class SubCategoryController extends Controller
     public function delete($id){
         $subcategory=Subcategory::find($id);
         if(File::exists('backend/subcategory/'.$subcategory->image)){
-            File::delete('backend/subcategory/'.$subcategory->images);
+            File::delete('backend/subcategory/'.$subcategory->image);
         }
         $subcategory->delete();
 
@@ -95,6 +95,48 @@ class SubCategoryController extends Controller
 
 
         ]);
+
+    }
+
+    function updateview($id){
+
+        $subcategory=Subcategory::find($id);
+        return response()->json([
+          
+            'status'=>$subcategory
+
+
+
+        ]);
+
+    }
+
+    function update(Request $request, $id){
+
+        if($request->image){
+            $image=$request->File('image');
+            $customname=rand().".".$image->getClientOriginalExtension();
+            $location= public_path('backend/subcategory/'.$customname);
+            Image::make($image)->save($location);
+      
+        }
+      
+        $subcategory=Subcategory::find($id);
+        $subcategory->cat_id=2;
+        $subcategory->name=$request->name;
+        $subcategory->image=$customname;
+        $subcategory->status=$request->status;
+       
+
+        $subcategory->update();
+
+        return response()->json([
+
+           'status'=>'success'
+        ]);
+    
+
+
 
     }
 
