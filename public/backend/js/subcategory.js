@@ -82,5 +82,27 @@ jQuery(document).on("click",".deleteid",function(){
 
 });
 
+   //for delete
+   jQuery(document).on("click",".deletemodal",function(){
+   
+    var id=jQuery(this).val();
+     
+    $.ajax({
+     type: "GET",
+     url: "/subcategoey/deletesubcategory/"+id,
+     dataType: "JSON",
+     success: function (response) {
+       show();
+        jQuery("#deleteModal").modal("hide");
+   
+       
+     }
+    });
+     
+
+});
+
+
+
 
 });

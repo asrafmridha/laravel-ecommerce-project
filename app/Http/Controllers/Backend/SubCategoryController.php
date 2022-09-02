@@ -43,7 +43,7 @@ class SubCategoryController extends Controller
        
 
             if($request->image){
-                $image=$request->file('image');
+                $image=$request->File('image');
                 $customname=rand().".".$image->getClientOriginalExtension();
                 $location= public_path('backend/subcategory/'.$customname);
                 Image::make($image)->save($location);
@@ -79,6 +79,23 @@ class SubCategoryController extends Controller
         ]);
 
         
+    }
+
+    public function delete($id){
+        $subcategory=Subcategory::find($id);
+        if(File::exists('backend/subcategory/'.$subcategory->image)){
+            File::delete('backend/subcategory/'.$subcategory->images);
+        }
+        $subcategory->delete();
+
+        return response()->json([
+          
+            'delete'=>'success'
+
+
+
+        ]);
+
     }
 
 
