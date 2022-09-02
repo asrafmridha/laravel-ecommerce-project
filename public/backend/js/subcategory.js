@@ -72,7 +72,15 @@ jQuery('#subcategoryform').on("submit",function(e){
             
         }
     });
-})
+});
+
+// // for get id from current button and pass into modal button 
+
+jQuery(document).on("click",".deleteid",function(){
+  var id= jQuery(this).val();
+  jQuery('.deletemodal').val(id);
+
+});
 
 
 });
