@@ -62,6 +62,10 @@ Route::post('/updatesubcategory/{id}',[SubCategoryController::class,'update']);
 
     Route::get('manageproduct',[ProductController::class,'manageproduct'])->name('manageproduct');
 
+     Route::get('statuschange/{id}',[ProductController::class,'statuschange'])->name('statuschange');
+
+     Route::get('/deletesubproduct/{id}',[ProductController::class,'delete']);
+
     
     });
 

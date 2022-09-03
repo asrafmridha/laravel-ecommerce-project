@@ -8,6 +8,21 @@ jQuery(document).ready(function(){
 
   });
 
+   jQuery(document).on('click','.deletemodalproduct',function(){
+    
+     var id=jQuery(this).val();
+        $.ajax({
+            type: "GET",
+            url: "/product/deletesubproduct/"+id,
+            dataType: "JSON",
+            success: function (response) {
+                jQuery("#deleteModalproduct").modal("hide");
+                alert('delete Successfully');
+            }
+        });
+
+   });
+
 
 
 

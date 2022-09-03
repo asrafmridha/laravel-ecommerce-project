@@ -14,24 +14,24 @@ class ProductController extends Controller
 {
          function productview(){
 
-            return view('backend.pages.product');
+            return view('backend.pages.product.product');
          }
 
          function addproduct(Request $request){
 
-            $request->validate([
+            // $request->validate([
 
-               'product_name'=>'required',
-               'product_price'=>'required',
-               'product_code'=>'required',
-               'short_description'=>'required',
-               'quantity'=>'required',
-               'short_description'=>'required',
-               'thumbnails'=>'required',
-               'status'=>'required',
+            //    'product_name'=>'required',
+            //    'product_price'=>'required',
+            //    'product_code'=>'required',
+            //    'short_description'=>'required',
+            //    'quantity'=>'required',
+            //    'short_description'=>'required',
+            //    'thumbnails'=>'required',
+            //    'status'=>'required',
          
          
-                ]);
+            //     ]);
    
 
             if($request->image){
@@ -59,7 +59,49 @@ class ProductController extends Controller
 
             $product->save();
 
+            return redirect()->back()->with('message',"Product Added Successfully");
 
 
          }
+
+          function manageproduct(){
+
+            $productall= Product::all();
+         return view('backend.pages.product.manageproduct',compact('productall'));
+
+
+
+          }
+
+          function statuschange($id){
+
+            $status=Product::find($id);
+            if($status->status==1){
+               $status->status=2;
+            }
+            else{
+               $status->status=1;
+            }
+            $status->update();
+
+            if($status->status==1){
+               return redirect()->route("manageproduct")->with("message","active Successfully");
+
+            }
+            else{
+               return redirect()->route("manageproduct")->with("message","Inactive Successfully");
+
+            }
+          }
+
+          function delete($id){
+            $product=Product::find($id);
+            $product->delete();
+            return response()->json([
+
+                'status'=>'success'
+            ]);
+
+
+          }
 }
