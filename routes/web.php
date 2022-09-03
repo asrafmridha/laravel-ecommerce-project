@@ -59,7 +59,9 @@ Route::post('/updatesubcategory/{id}',[SubCategoryController::class,'update']);
     Route::get('productview',[ProductController::class,'productview'])->name('productview');
     
     Route::post('addproduct',[ProductController::class,'addproduct'])->name('addproduct');
-    
+
+    Route::get('manageproduct',[ProductController::class,'manageproduct'])->name('manageproduct');
+
     
     });
 
