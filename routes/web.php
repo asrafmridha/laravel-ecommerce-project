@@ -60,11 +60,16 @@ Route::post('/updatesubcategory/{id}',[SubCategoryController::class,'update']);
     
     Route::post('addproduct',[ProductController::class,'addproduct'])->name('addproduct');
 
-    Route::get('manageproduct',[ProductController::class,'manageproduct'])->name('manageproduct');
+    Route::get('manageproductview',[ProductController::class,'manageproductview'])->name('manageproductview');
+    Route::get('/manageproduct',[ProductController::class,'manageproduct']);
 
      Route::get('statuschange/{id}',[ProductController::class,'statuschange'])->name('statuschange');
 
      Route::get('/deletesubproduct/{id}',[ProductController::class,'delete']);
+
+
+    Route::get('/updateproductview/{id}',[ProductController::class,'updateproductview']);
+
 
     
     });
