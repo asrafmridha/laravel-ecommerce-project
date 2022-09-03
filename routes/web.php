@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use Illuminate\Support\Facades\Route;
@@ -49,3 +50,16 @@ Route::post('/updatesubcategory/{id}',[SubCategoryController::class,'update']);
 
 
 });
+
+// Route group for Product
+
+
+   Route::group(['prefix'=>'/product'],function(){
+
+    Route::get('productview',[ProductController::class,'productview'])->name('productview');
+    
+    Route::post('addproduct',[ProductController::class,'addproduct'])->name('addproduct');
+    
+    
+    });
+

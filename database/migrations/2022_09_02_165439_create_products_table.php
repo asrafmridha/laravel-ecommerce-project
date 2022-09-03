@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('slug');
             $table->integer('product_code');
             $table->float('product_price');
-            $table->float('discount');
-            $table->float('discount_price');
+            $table->float('discount')->nullable();
+            $table->float('discount_price')->nullable();
             $table->text('short_description');
-            $table->text('long_description');
+            $table->text('long_description')->nullable();
             $table->string('thumbnails');
             $table->integer('quantity');
             $table->integer('status');
