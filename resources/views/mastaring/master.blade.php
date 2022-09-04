@@ -31,7 +31,9 @@
       </div><!-- row -->
 
       </div><!-- br-pagebody -->
+     <div mt-5> 
       @include('backend.includes.footer')
+    </div>
     </div><!-- br-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
     @include('backend.includes.script')

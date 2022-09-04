@@ -46,7 +46,15 @@
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{Route('productview')}}" class="sub-link">Add Product</a></li>
             
+        <li class="sub-item"><a href="{{Route('manageproductview')}}" class="sub-link">Manage Product</a></li> 
+              
+         
+            
           </ul>
+
+          
+
+         
         </li>
 
 

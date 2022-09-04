@@ -11,7 +11,7 @@
 
             @csrf
     
-      <select name="categoryitem" class="mt-3 form-control ">
+      <select name="categoryitem" class="mt-3 form-control categoryitem">
           <option value="">-----Select Category-----</option>
         
          <option value="1"> Asraf</option>
@@ -50,8 +50,8 @@
                 <tr>
                    <th>Category Id</th>
                     <th>Name</th>
-                    <th>Slug</th>
                     <th>Image</th>
+                    <th>status</th>
                     <th >Action</th>
                 </tr>
            </thead>
@@ -68,7 +68,7 @@
 
 
 
-<!-- Modal for delete -->
+<!-- Modal for subcategory delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -84,6 +84,55 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary deletemodal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--for upadate Subcategory Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="updatecategoryform" method="POST" enctype="multipart/form-data"
+        >
+        @csrf
+        <select name="categoryitem" class="mt-3 form-control   ">
+          <option  value="1"> Asraf</option>
+  
+      </select>
+      
+      <input type="text" name="name" class="mt-3 form-control ucategory" placeholder="Enter SubCategory name">
+
+      
+      <div class="img">
+
+      </div>
+        <input type="file" name="image" class="mt-3 form-control  ">
+      
+         
+        <select name="status" class="mt-3 form-control ustatus" >
+           <option value="1"> Active</option>
+           <option value="2"> Inactive</option> 
+        </select>
+
+       <div class="modal-footer"> 
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary updateemodal">Update</button>
+
+      </form>
+
+    </div>
       </div>
     </div>
   </div>

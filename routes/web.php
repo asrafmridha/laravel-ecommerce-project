@@ -68,7 +68,9 @@ Route::post('/updatesubcategory/{id}',[SubCategoryController::class,'update']);
      Route::get('/deletesubproduct/{id}',[ProductController::class,'delete']);
 
 
-    Route::get('/updateproductview/{id}',[ProductController::class,'updateproductview']);
+    Route::get('/updateproductview/{id}',[ProductController::class,'updateproductview']); 
+
+    Route::post('/updateproduct/{id}',[ProductController::class,'updateproduct']);
 
 
     
