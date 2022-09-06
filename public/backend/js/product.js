@@ -27,7 +27,7 @@ jQuery(document).ready(function(){
               <td>'+item.discount_price+'</td>\
               <td>'+item.short_description+'</td>\
               <td>'+item.long_description+'</td>\
-              <td><img width="150px" height="150px" src="/backend/products/'+item.thumbnails +'"></td>\
+              <td><img width="150px" height="150px" src="/backend/product/'+item.thumbnails +'"></td>\
               <td>'+item.quantity+'</td>\
                  <td>'+status+'</td>\
                 <td><button id="updatebtn" value="'+item.id+'" class="updateproduct btn btn-success btn-sm" data-toggle="modal" data-target="#updateproduct"><i class="fa fa-edit"></i></button> </td>\
