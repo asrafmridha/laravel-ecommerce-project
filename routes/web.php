@@ -4,6 +4,8 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\SocailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// All Social Item Here
+
+Route::get('gotogoogle',[SocailController::class,'gotogoogle'])->name('gotogoogle');
+
+Route::get('/google/login',[SocailController::class,'googlestore'])->name('googlestore');
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +46,8 @@ require __DIR__.'/auth.php';
 
 
 //Route for Slider
+
+
 
 Route::group(['prefix'=>'/slider'],function(){
 
