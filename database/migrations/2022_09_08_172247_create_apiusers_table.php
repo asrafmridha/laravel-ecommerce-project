@@ -14,7 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('apiusers', function (Blueprint $table) {
-            $table->id();
+            $table->increments("id");
+            $table->string("name");
+            $table->string("address");
+            $table->string("phone");
+            $table->string("email");
+            $table->integer("nid");
+            $table->string("appname")->nullable();
+            $table->string("description")->nullable();
+            $table->string("url")->nullable();
+            $table->string("clientid")->nullable();
+            $table->string("token")->nullable();
+            $table->integer("status")->default(1);
             $table->timestamps();
         });
     }
