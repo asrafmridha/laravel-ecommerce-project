@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\ApiUserController;
 use App\Http\Controllers\backend\MyApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/alldata',[MyApiController::class,'alldta']);
 Route::post('/store',[MyApiController::class,'store']);
+
+Route::get('/add',[ApiUserController::class,'add']);
+
+Route::post('/adduser',[MyApiController::class,"adduser"])->name('adduser');
