@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class ApiUserController extends Controller
 {
-    //
+     public function add(){
+        return view('api/add');
+     }  
 }
