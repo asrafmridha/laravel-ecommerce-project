@@ -25,4 +25,6 @@ Route::post('/store',[MyApiController::class,'store']);
 
 Route::get('/add',[ApiUserController::class,'add']);
 
-Route::post('/adduser',[MyApiController::class,"adduser"])->name('adduser');
+Route::post('/adduser',[ApiUserController::class,"adduser"])->name('adduser');
+
+Route::get("/userview/{id}",[ApiUserController::class,'userview'])->name('userview');
