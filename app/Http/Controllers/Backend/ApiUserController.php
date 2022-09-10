@@ -23,6 +23,13 @@ class ApiUserController extends Controller
         $apiuser->save();
 
 
+     }
+
+     function userview($id){
+           
+      $userview=Apiuser::find($id);
+      return view('api.profile',compact('userview'));
+
 
 
      }
