@@ -39,28 +39,26 @@
 
     
     
-     {{-- <div class="container">
+   <div class="container">
 
         <div class="row mt-4">
             <div class="col-md-6">
 
-                <h4>Registration Form</h4>
-                {{-- action="{{Route('adduser')}}" --}}
-                {{-- <form  action="{{Route('adduser')}}"   method="POST" >
+                <h4>Registration For Get Api</h4>
+               
+            <form  action="{{Route('adduser')}}"   method="POST" >
 
                     @csrf
-                <input type="text" name="uname" class="mt-3 form-control image"
-                placeholder="User Name">
+                <input type="text" name="appname" class="mt-3 form-control image"
+                placeholder="User appname">
             
-                 <input type="text" name="address" class="mt-3 form-control description"
+                 <input type="text" name="description" class="mt-3 form-control description"
                 placeholder="Address">
             
-                <input type="text" name="phone" class="mt-3 form-control description"
-                placeholder="Phone">
+                <input type="text" name="url" class="mt-3 form-control description"
+                placeholder="Url">
             
-                <input type="email" name="email" class="mt-3 form-control" placeholder="Email" >
-            
-                <input type="number" name="nid" class="mt-3 form-control" placeholder="nid" >
+              
             
                   <button class="form-control mt-3 btn-purchaseAdd btn btn-success"> Save </button>
             
@@ -74,7 +72,7 @@
 
 
      </div> 
- --}}
+
 
     {{-- <script>
 
