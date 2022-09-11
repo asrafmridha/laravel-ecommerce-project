@@ -30,6 +30,26 @@ class ApiUserController extends Controller
       $userview=Apiuser::find($id);
       return view('api.profile',compact('userview'));
 
+     }
+
+     function update(Request $request, $id){
+
+      $data= Apiuser::find($id);
+      $clientid=md5($data->nid);
+      $token=md5($data->phone);
+      $data->appname=$request->appname;
+      $data->description=$request->description;
+      $data->url=$request->url;
+      $data->clientid=$clientid;
+      $data->token=$token;
+      $data->update();
+      return back();
+
+      
+
+      
+
+      
 
 
      }
