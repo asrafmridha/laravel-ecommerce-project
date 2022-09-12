@@ -19,20 +19,17 @@ class ProductController extends Controller
 
          function addproduct(Request $request){
 
-            // $request->validate([
+             $request->validate([
 
-            //    'product_name'=>'required',
-            //    'product_price'=>'required',
-            //    'product_code'=>'required',
-            //    'short_description'=>'required',
-            //    'quantity'=>'required',
-            //    'short_description'=>'required',
-            //    'thumbnails'=>'required',
-            //    'status'=>'required',
-         
-         
-            //     ]);
-   
+               'product_name'=>'required',
+               'product_price'=>'required',
+               'product_code'=>'required',
+               'short_description'=>'required',
+               'quantity'=>'required',
+               'image'=>'required',
+               'short_description'=>'required',
+               'status'=>'required',
+                ]);
 
             if($request->image){
                $image=$request->File('image');
@@ -138,15 +135,18 @@ class ProductController extends Controller
           function updateproduct(Request $request, $id){
 
            
-
+            $product =Product::find($id);
              if($request->uimage){
+               if(File::exists('backend/product/'.$product->thumbnails)){
+                  File::delete('backend/product/'.$product->thumbnails);
+              }
                $uimage=$request->file('uimage');
                $customname=rand().".".$uimage->getClientOriginalExtension();
                $location= public_path('backend/product/'.$customname);
                Image::make($uimage)->save($location);
            }
 
-            $product =Product::find($id);
+           
             $product->vendor_id=1;
             $product->cat_id=1;
             $product->subcat_id=1;
