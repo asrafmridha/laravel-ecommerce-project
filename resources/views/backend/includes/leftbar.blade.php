@@ -20,6 +20,9 @@
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{Route('addsliderview')}}" class="sub-link">Add Slider</a></li>
             
+          
+            <li class="sub-item"><a href="" class="sub-link">Manage Slider</a></li>
+            
           </ul>
         </li>
 
@@ -66,3 +69,5 @@
       <br>
     </div><!-- br-sideleft -->
     <!-- ########## END: LEFT PANEL ########## -->
+
+    
