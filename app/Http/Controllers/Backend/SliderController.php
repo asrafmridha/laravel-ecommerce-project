@@ -17,6 +17,18 @@ class SliderController extends Controller
 
     public function sliderstore(Request $request){
 
+        $request->validate([
+
+            'category'=>'required',
+            'title'=>'required',
+            'description'=>'required',
+            'image'=>'required',
+            'link'=>'required',
+            'status'=>'required',
+        
+      
+             ]);
+
         if($request->image){
             $image=$request->file('image');
             $customname=rand().".".$image->getClientOriginalExtension();
@@ -32,6 +44,8 @@ class SliderController extends Controller
          $slider->link=$request->link;
          $slider->status=$request->status;
          $slider->save();
+
+         return back()->with('message','Slider added Successfully');
 
 
     }
