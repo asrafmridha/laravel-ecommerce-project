@@ -19,6 +19,8 @@ class ProductController extends Controller
 
          function addproduct(Request $request){
 
+            if($request->isMethod('POST')){
+
              $request->validate([
 
                'product_name'=>'required',
@@ -35,7 +37,7 @@ class ProductController extends Controller
                $image=$request->File('image');
                $customname=rand().".".$image->getClientOriginalExtension();
                $location= public_path('backend/product/'.$customname);
-               Image::make($image)->save($location);
+               Image::make($image)->resize(320, 240)->save($location);
            }
 
             $product =new Product;
@@ -58,7 +60,7 @@ class ProductController extends Controller
 
             return redirect()->back()->with('message',"Product Added Successfully");
 
-
+            }
          }
 
          function manageproductview(){
