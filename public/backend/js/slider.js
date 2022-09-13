@@ -29,21 +29,7 @@ jQuery(document).ready(function(){
             }
         });
 
-
-
-
-
-
       }
-
-
-
-
-
-
-
-
-
 
 
 });
