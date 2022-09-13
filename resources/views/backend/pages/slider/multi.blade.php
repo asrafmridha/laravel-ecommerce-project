@@ -4,9 +4,13 @@
 
   <div class="col-md-6 offset-2"  >
 
- 
+    @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+     @endif
 
- <form id="" method="POST" action="" enctype="multipart/form-data"
+ <form id="" method="POST" action="{{Route('slider.multistore')}}" enctype="multipart/form-data"
  >
 
      @csrf
@@ -20,12 +24,21 @@
          
      @enderror --}}
 
-     <select name="status" class="mt-3 form-control " >
+     <select name="slider_id" class="mt-3 form-control " >
         <option value=""> ------ Select Slider -------</option>
+
+        @foreach ($multi as $item)
+
+        <option value="{{$item->id}}">{{$item->title}}</option>
+
+            
+        @endforeach
         
      </select>
 
-    <input type="file" name="image" class="mt-3 form-control" multiple>
+    <input type="file" name="multiimage[]" class="mt-3 form-control" multiple>
+
+    <button type="submit" class="form-control mt-3 btn btn-success"> Save </button>
 
  </form>
 
