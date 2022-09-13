@@ -30,7 +30,7 @@ class SliderController extends Controller
              ]);
 
         if($request->image){
-            $image=$request->file('image');
+            $image=$request->File('image');
             $customname=rand().".".$image->getClientOriginalExtension();
             $location= public_path('backend/slider'.$customname);
             Image::make($image)->save($location);
@@ -46,6 +46,16 @@ class SliderController extends Controller
          $slider->save();
 
          return back()->with('message','Slider added Successfully');
+
+
+    }
+
+    public function manageslider(){
+
+        $manageslider=Slider::all();
+        return view('backend.pages.slider.manageslider',compact('manageslider'));
+
+
 
 
     }
