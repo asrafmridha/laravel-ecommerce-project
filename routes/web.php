@@ -52,6 +52,11 @@ Route::group(['prefix'=>'/slider'],function(){
 
     Route::get('/multiview',[SliderController::class,'multi'])->name('slider.multi');
 
+    Route::post('/multistore',[SliderController::class,'multistore'])->name('slider.multistore');
+
+
+    
+
     
     });
 
