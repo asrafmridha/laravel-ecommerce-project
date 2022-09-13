@@ -85,12 +85,14 @@ class SliderController extends Controller
                 $location= public_path('backend/slider/multi/'.$customname);
                 Image::make($image)->save($location);
 
+                $multi=new Multi;
+                $multi->slider_id=$request->slider_id;
+                $multi->image=$customname;
+                $multi->save();
+
             }
 
-            $multi=new Multi;
-            $multi->slider_id=$request->slider_id;
-            $multi->image=$customname;
-            $multi->save();
+        
             return back()->with('message','Multi Images add Successfully');
         }
     }
