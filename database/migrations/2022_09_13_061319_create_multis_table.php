@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('multis', function (Blueprint $table) {
             $table->id();
+            $table->integer('slider_id');
+            $table->string('image');
             $table->timestamps();
         });
     }
