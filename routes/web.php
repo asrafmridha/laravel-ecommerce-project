@@ -25,15 +25,6 @@ Route::get('gotogoogle',[SocailController::class,'gotogoogle'])->name('gotogoogl
 Route::get('/google/login',[SocailController::class,'googlestore'])->name('googlestore');
 
 
-
-
-
-
-
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -54,6 +45,8 @@ Route::group(['prefix'=>'/slider'],function(){
     Route::get('/addsliderview',[SliderController::class,'addsliderview'])->name('addsliderview');
     
     Route::post('/store',[SliderController::class,'sliderstore'])->name('sliderstore');
+
+    Route::get('manageslider',[SliderController::class,'manageslider'])->name('manageslider');
     
     });
 
