@@ -91,9 +91,24 @@ class SliderController extends Controller
                 $multi->save();
 
             }
-
-        
             return back()->with('message','Multi Images add Successfully');
         }
     }
+    public function sliderdatadestroy($id){
+     $sliderdatadestroy= Slider::find($id);
+
+     if(File::exists('backend/slider/'.$sliderdatadestroy->image)){
+        File::delete('backend/slider/'.$sliderdatadestroy->image);
+    }
+    $sliderdatadestroy->delete();
+
+    return response()->json([
+     'status'=>'success'
+    ]);
+
+
+    }
+
+   
+      
 }
