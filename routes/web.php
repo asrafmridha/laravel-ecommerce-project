@@ -52,6 +52,11 @@ Route::group(['prefix'=>'/slider'],function(){
 
     Route::get('/multiview',[SliderController::class,'multi'])->name('slider.multi');
 
+    Route::get('/sliderdatadestroy/{id}',[SliderController::class,'sliderdatadestroy']);
+
+
+    
+
     Route::post('/multistore',[SliderController::class,'multistore'])->name('slider.multistore');
 
 
