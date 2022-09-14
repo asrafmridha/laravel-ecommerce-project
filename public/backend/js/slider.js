@@ -37,6 +37,34 @@ jQuery(document).ready(function(){
         jQuery('.slidermodalbutton').val(id);
       });
 
+
+      //for delete Slider
+
+      jQuery(document).on('click','.slidermodalbutton', function(){
+
+       var id= jQuery(this).val();
+
+        $.ajax({
+          type: "GET",
+          url: "/slider/sliderdatadestroy/"+id,
+          dataType: "JSON",
+          success: function (response) {
+            jQuery('#sliderdeltemodal').modal('hide');
+            jQuery('.slidermsg').text('Data Delete Successfully');
+            jQuery('.slidermsg').fadeOut(1000);
+            
+          }
+        });
+
+
+
+
+
+
+      });
+
+    
+
      
 
 
