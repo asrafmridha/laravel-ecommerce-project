@@ -112,8 +112,11 @@ class SubCategoryController extends Controller
     }
 
     function update(Request $request, $id){
-
+        $subcategory=Subcategory::find($id);
         if($request->image){
+            if(File::exists('backend/subcategory/'.$subcategory->image)){
+                File::delete('backend/subcategory/'.$subcategory->image);
+            }
             $image=$request->File('image');
             $customname=rand().".".$image->getClientOriginalExtension();
             $location= public_path('backend/subcategory/'.$customname);
@@ -121,7 +124,7 @@ class SubCategoryController extends Controller
       
         }
       
-        $subcategory=Subcategory::find($id);
+        
         $subcategory->cat_id=2;
         $subcategory->name=$request->name;
         $subcategory->image=$customname;

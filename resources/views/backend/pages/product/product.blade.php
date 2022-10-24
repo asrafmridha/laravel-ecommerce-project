@@ -90,8 +90,8 @@
    @enderror
  
    
-     <input type="file" name="image" class="mt-3 form-control image">
-     <span class="error_image text-danger"></span>
+     <input type="file" name="image"  class="mt-3 form-control image">
+     
 
      @error('quantity')
 

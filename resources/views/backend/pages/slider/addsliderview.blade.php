@@ -20,7 +20,7 @@
         </div>  
         @enderror
 
-  <input type="text" name="category" class="mt-3 form-control name" placeholder="Enter Category name">
+  <input type="text" name="category" class="mt-3 form-control name" placeholder="Enter Slider Name here">
 
   @error('title')
   <div class="alert alert-danger">
@@ -30,7 +30,7 @@
   @enderror
   
     <input type="text" name="title" class="mt-3 form-control image"
-    placeholder="Enter Your Category Title here">
+    placeholder="Enter Category Name">
 
     @error('description')
     <div class="alert alert-danger">
@@ -40,7 +40,7 @@
     @enderror
 
     <textarea name="description" name="description" class="mt-3 form-control" cols="60" rows="1"
-    placeholder="Enter  Category description here"></textarea>
+    placeholder="Enter  Slider description here"></textarea>
 
     <label class="mt-3 " for="">Enter Your Category Image Here</label>
 

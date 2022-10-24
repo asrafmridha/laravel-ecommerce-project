@@ -5,7 +5,7 @@
       <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
       <ul class="br-sideleft-menu">
         <li class="br-menu-item">
-          <a href="index.html" class="br-menu-link active">
+          <a href="{{ route('dashboard') }}" class="br-menu-link @yield('dashboard')">
             <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
             <span class="menu-item-label">Dashboard</span>
           </a><!-- br-menu-link -->
@@ -21,7 +21,9 @@
             <li class="sub-item"><a href="{{Route('addsliderview')}}" class="sub-link">Add Slider</a></li>
             
           
-            <li class="sub-item"><a href="" class="sub-link">Manage Slider</a></li>
+            <li class="sub-item"><a href="{{Route('manageslider')}}" class="sub-link">Manage Slider</a></li>
+
+            <li class="sub-item"><a href="{{Route('slider.multi')}}" class="sub-link">Multi</a></li>
             
           </ul>
         </li>
@@ -29,9 +31,9 @@
         {{-- for subcategory --}}
 
         <li class="br-menu-item">
-          <a href="#" class="br-menu-link with-sub">
+          <a href="#"  class=" @yield('category') br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
-            <span class="menu-item-label">Subcategory</span>
+            <span class="menu-item-label">Category</span>
           </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
             <li class="sub-item"><a href="{{Route('subcategoryview')}}" class="sub-link">Manage SubCategory</a></li>

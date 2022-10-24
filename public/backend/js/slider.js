@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
           <td>'+item.category+'</td>\
           <td>'+item.status+'</td>\
           <td><img width="150px" height="150px" src="/backend/slider/'+item.image +'"></td>\
-            <td><button id="updatebtn" value="'+item.id+'" class="updateid btn btn-success btn-sm" data-toggle="modal" data-target="#updateModal"><i class="fa fa-edit"></i></button> </td>\
+            <td><button id="updatebtn" value="'+item.id+'" class="updateid btn btn-success btn-sm" data-toggle="modal" data-target="#updateslidermodal"><i class="fa fa-edit"></i></button> </td>\
             <td> <button value="'+item.id+'" class="deletesliderid btn btn-danger btn-sm" data-toggle="modal" data-target="#sliderdeltemodal"><i class="fa fa-trash"></i></button></td>\
           </tr>';
           
@@ -55,13 +55,16 @@ jQuery(document).ready(function(){
             
           }
         });
-
-
-
-
-
-
       });
+
+      
+      //for Updateview Slider
+
+
+
+
+
+
 
     
 

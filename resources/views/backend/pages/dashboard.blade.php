@@ -1,4 +1,11 @@
 @extends('mastaring.master')
+
+@section('dashboard')
+
+ active
+
+ @endsection
+
  
  @section('content')
 

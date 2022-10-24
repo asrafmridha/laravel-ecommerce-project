@@ -22,6 +22,7 @@
 <script src="{{asset('backend')}}/js/dashboard.js"></script>
 <script src="{{asset('backend')}}/js/subcategory.js"></script>
 <script src="{{asset('backend')}}/js/product.js"></script>
+<script src="{{asset('backend')}}/js/slider.js"></script>
 <script>
   $(function(){
     'use strict'

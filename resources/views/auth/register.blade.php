@@ -89,6 +89,22 @@
                                 name="password_confirmation" />
             </div>
 
+            {{-- Social icon  --}}
+
+            <a href="{{Route('gotogoogle')}}" class="btn btn-info mt-2"><i class="fab fa-google-plus-g"></i></a>
+
+            <a href="" class="btn btn-info mt-2"><i class="fab fa-linkedin"></i></a>
+            <a href="" class="btn btn-info mt-2"><i class="fab fa-google-plus-g"></i></a>
+            <a href="" class="btn btn-info mt-2"><i class="fab fa-google-plus-g"></i></a>
+
+
+
+
+
+
+
+
+
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                     {{ __('Already registered?') }}

@@ -17,7 +17,7 @@ class SocailController extends Controller
     public function googlestore(){
 
         $user = Socialite::driver('google')->user();
-        dd($user);
+         
     }
     
 }

@@ -26,12 +26,12 @@ Route::get('/google/login',[SocailController::class,'googlestore'])->name('googl
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.home');
 });
 
 Route::get('/dashboard', function () {
     return view('backend.pages.dashboard');
-})->middleware(['auth','verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -40,7 +40,7 @@ require __DIR__.'/auth.php';
 
 
 
-Route::group(['prefix'=>'/slider'],function(){
+Route::group(['prefix'=>'/slider','middleware'=>['auth']],function(){
 
     Route::get('/addsliderview',[SliderController::class,'addsliderview'])->name('addsliderview');
     
@@ -54,13 +54,8 @@ Route::group(['prefix'=>'/slider'],function(){
 
     Route::get('/sliderdatadestroy/{id}',[SliderController::class,'sliderdatadestroy']);
 
-
-    
-
     Route::post('/multistore',[SliderController::class,'multistore'])->name('slider.multistore');
 
-
-    
 
     
     });

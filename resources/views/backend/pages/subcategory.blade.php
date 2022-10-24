@@ -1,4 +1,10 @@
 @extends('mastaring.master')
+
+@section('category')
+
+active
+
+@endsection
  
  @section('content')
       

@@ -45,11 +45,17 @@ class ApiUserController extends Controller
       $data->update();
       return back();
 
-      
+     }
+     function gettoken($id){
+      $token= Apiuser::find($id);
 
-      
+      return response()->json([
 
-      
+        'status'=>'success',
+        'token'=>$token
+
+      ]);
+
 
 
      }

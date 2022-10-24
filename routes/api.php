@@ -30,3 +30,5 @@ Route::post('/adduser',[ApiUserController::class,"adduser"])->name('adduser');
 Route::get("/userview/{id}",[ApiUserController::class,'userview'])->name('userview');
 
 Route::post('update/{id}',[ApiUserController::class, "update"])->name('update');
+
+Route::get('/gettoken/{id}',[ApiUserController::class.'gettoken']);
