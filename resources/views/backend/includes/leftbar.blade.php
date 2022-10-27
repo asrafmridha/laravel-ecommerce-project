@@ -28,16 +28,27 @@
           </ul>
         </li>
 
-        {{-- for subcategory --}}
+        {{-- for category --}}
 
-        <li class="br-menu-item">
+        {{-- <li class="br-menu-item">
           <a href="#"  class=" @yield('category') br-menu-link with-sub">
             <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
             <span class="menu-item-label">Category</span>
           </a><!-- br-menu-link -->
+            <li class="sub-item"><a href="" class="sub-link">Add Category</a></li>
+            <li class="sub-item"><a href="{{Route('subcategoryview')}}" class="sub-link">Manage SubCategory</a></li>  
+    
+        </li> --}}
+
+        <li class="br-menu-item">
+          <a href="#" class=" @yield('category') br-menu-link with-sub">
+            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+            <span class="menu-item-label">Category</span>
+          </a><!-- br-menu-link -->
           <ul class="br-menu-sub">
-            <li class="sub-item"><a href="{{Route('subcategoryview')}}" class="sub-link">Manage SubCategory</a></li>
+            {{-- <li class="sub-item"><a href="{{ route('category.add') }}" class="sub-link">Add Category</a></li> --}}
             
+            <li class="sub-item"><a href="{{Route('subcategoryview')}}" class="sub-link">Manage SubCategory</a></li>
           </ul>
         </li>
 

@@ -146,6 +146,7 @@ class ProductController extends Controller
                $customname=rand().".".$uimage->getClientOriginalExtension();
                $location= public_path('backend/product/'.$customname);
                Image::make($uimage)->save($location);
+               $product->thumbnails= $customname;
            }
 
            
@@ -162,7 +163,7 @@ class ProductController extends Controller
             $product->quantity=$request->uquantity;
             $product->status=$request->ustatus;
             // $product->slug=Str::slug($request->uproductname);
-            $product->thumbnails= $customname;
+            
 
             $product->update();
 
